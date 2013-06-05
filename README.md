@@ -29,12 +29,13 @@ draw image on terminal by ANSI Escape codes.
 ## Screenshot
 ![rohan1](http://mmiyajix.appspot.com/download/aghtbWl5YWppeHIQCxIIUG9zdERhdGEYwakHDA/Screen%20Shot%202013-06-03%20at%2011.10.20%20PM.png)
 ![rohan2](http://mmiyajix.appspot.com/download/aghtbWl5YWppeHIQCxIIUG9zdERhdGEY4sgHDA/Screen%20Shot%202013-06-06%20at%2012.10.28%20AM.png)
+![rohan3](http://mmiyajix.appspot.com/download/aghtbWl5YWppeHIQCxIIUG9zdERhdGEYmeAHDA/2013-06-05-223145_1280x800_scrot.png)
 
 # License
 The MIT License
 
 
-Copyright (c) 2012 Masahiro MIYAJI
+Copyright (c) 2013 Masahiro MIYAJI
 
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
