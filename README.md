@@ -4,15 +4,13 @@ rohan
 draw image on terminal by ANSI Escape codes.
 
 ------------------
-### システム概要
+### About
 ターミナルに画像を表示するスクリプト。
 
 [Pythonでターミナルに画像表示するやつ - mmiyajix http://mmiyajix.appspot.com/entry/123001](http://mmiyajix.appspot.com/entry/123001)
 
 ### Usage
     usage: rohan.py [-h] [-v] [-s SIZE] [-d DEPTH] [-f FILE] file
-
-    image file path.
 
     positional arguments:
       file                  image file path.
@@ -30,6 +28,7 @@ draw image on terminal by ANSI Escape codes.
 ![rohan1](http://mmiyajix.appspot.com/download/aghtbWl5YWppeHIQCxIIUG9zdERhdGEYwakHDA/Screen%20Shot%202013-06-03%20at%2011.10.20%20PM.png)
 ![rohan2](http://mmiyajix.appspot.com/download/aghtbWl5YWppeHIQCxIIUG9zdERhdGEY4sgHDA/Screen%20Shot%202013-06-06%20at%2012.10.28%20AM.png)
 ![rohan3](http://mmiyajix.appspot.com/download/aghtbWl5YWppeHIQCxIIUG9zdERhdGEYmeAHDA/2013-06-05-223145_1280x800_scrot.png)
+![rohan4](http://mmiyajix.appspot.com/download/aghtbWl5YWppeHIQCxIIUG9zdERhdGEYqrEHDA/Screen%20Shot%202013-06-05%20at%2010.59.26%20PM.png)
 
 # License
 The MIT License
