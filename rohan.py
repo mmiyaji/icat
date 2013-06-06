@@ -7,7 +7,7 @@ Created by mmiyaji on 2013-06-03.
 Copyright (c) 2013  ruhenheim.org. All rights reserved.
 """
 import sys, os, Image, colorsys, curses, argparse
-def get_prompt(p):
+def get_prompt(p, string = False):
     """
     Arguments:
     - `p`: image list (int red, int green, int blue)
@@ -31,20 +31,30 @@ def get_prompt(p):
         col = 47 # white
     elif hsv[2] < 100:
         col = 40  # black
-    return '\033[%dm \033[0m' % (col)
-def get_prompt256(p):
+    if string:
+        return '\033[%dm#\033[0m' % (col-10)
+    else:
+        return '\033[%dm \033[0m' % (col)
+def get_prompt256(p, string = False):
     """
     Arguments:
     - `p`: image list (int red, int green, int blue)
     value 0-255
     """
-    return '\x1b[48;5;%dm \x1b[0m' % (16 + 36*(round(5*(p[0]/256.0))) + 6*(round(5*(p[1]/256.0))) + (round(5*(p[2]/256.0))))
+    val = (16 + 36*(round(5*(p[0]/256.0))) + 6*(round(5*(p[1]/256.0))) + (round(5*(p[2]/256.0))))
+    if string:
+        return '\x1b[38;5;%dm#\x1b[0m' % (val)
+    else:
+        return '\x1b[48;5;%dm \x1b[0m' % (val)
 
 def main(args=None):
     path = args.file_path
     color = 256
     (height, width) = (100, 150)
+    text = False
     # set arg values
+    if args.t:
+        text = True
     if args.file:
         path = args.file
     if args.depth:
@@ -102,9 +112,9 @@ def main(args=None):
     for i in out:
         for j in i:
             if color == 256:
-                sys.stdout.write(get_prompt256(j))
+                sys.stdout.write(get_prompt256(j, text))
             else:
-                sys.stdout.write(get_prompt(j))
+                sys.stdout.write(get_prompt(j, text))
         print
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='image file path.')
@@ -112,7 +122,8 @@ if __name__ == '__main__':
                     help='image file path.')
     parser.add_argument('-v', '--version', action='version', version='%(prog)s 1.0')
     parser.add_argument('-s', '--size',    type=int, help='image width.')
-    parser.add_argument('-d', '--depth',   type=int, help='color depth. support 8(ansi) and 256(xterm-256).')
+    parser.add_argument('-d', '--depth',   type=int, choices=[8, 256], help='color depth. support 8(ansi) and 256(xterm-256).')
+    parser.add_argument('-t', action='store_true',    help='output with text format(write #).')
     parser.add_argument('-f', '--file',    help='image file path.')
     args = parser.parse_args()
     main(args)
