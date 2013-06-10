@@ -9,22 +9,31 @@ draw image on terminal by ANSI Escape codes.
 
 [Pythonでターミナルに画像表示するやつ - mmiyajix http://mmiyajix.appspot.com/entry/123001](http://mmiyajix.appspot.com/entry/123001)
 
+引数で与えた画像ファイルをターミナル上でANSI Escape codeを使ってレンダリングするスクリプトです。
+256色（xterm-256color）対応。
+
 ### Usage
-    usage: rohan.py [-h] [-v] [-s SIZE] [-d {8,256}] [-t] [-f FILE] file
+    usage: rohan.py [-h] [-v] [-s SIZE] [-m {w,h}] [-d {8,256}] [-t] [-f FILE]
+                    file
 
     image file path.
 
     positional arguments:
-        file                  image file path.
+      file                  set image file path.
 
     optional arguments:
       -h, --help            show this help message and exit
       -v, --version         show program's version number and exit
-      -s SIZE, --size SIZE  image width.
+      -s SIZE, --size SIZE  set image width. image width fit to number of
+                            character.
+      -m {w,h}, --mode {w,h}
+                            choice view mode. if you set "w", image width fit to
+                            screen width. the case of "h", fit to screen height.
+                            this option's effect is less than the size option.
       -d {8,256}, --depth {8,256}
-                            color depth. support 8(ansi) and 256(xterm-256).
+                            set color depth. support 8(ansi) and 256(xterm-256).
       -t                    output with text format(write #).
-      -f FILE, --file FILE  image file path.
+      -f FILE, --file FILE  set image file path.
 
 
 ## Screenshot
