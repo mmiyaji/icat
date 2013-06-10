@@ -127,7 +127,7 @@ def main(args=None):
                 sys.stdout.write(get_prompt(j, text))
         print
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='image file path.')
+    parser = argparse.ArgumentParser(description='rohon is a image viewer on terminal. render with ANSI Escape codes.')
     parser.add_argument('file_path', metavar='file',
                     help='set image file path.')
     parser.add_argument('-v', '--version', action='version', version='%(prog)s 1.0')
