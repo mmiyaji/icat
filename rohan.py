@@ -52,9 +52,12 @@ def main(args=None):
     color = 256
     (height, width) = (100, 150)
     text = False
+    mode = True
     # set arg values
     if args.t:
         text = True
+    if args.mode == "h":
+        mode = False
     if args.file:
         path = args.file
     if args.depth:
@@ -71,6 +74,7 @@ def main(args=None):
         except:
             pass
         max_width = width
+        max_height = height
     try:
         im = Image.open(path)
     except IOError:
@@ -79,7 +83,13 @@ def main(args=None):
     width, height = im.size
     try:
         # set font and image size ratio
-        max_height = int(max_width / 1.5 / (float(width) / height))
+        if args.size:
+            max_height = int(max_width / 1.5 / (float(width) / height))
+        else:
+            if mode:
+                max_height = int(max_width / 1.5 / (float(width) / height))
+            else:
+                max_width = int(max_height * 1.5 / (float(height) / width))
         w_step = float(width) / max_width
         h_step = float(height) / max_height
     except ZeroDivisionError:
@@ -101,7 +111,7 @@ def main(args=None):
                         rgb[1] += pics[1]
                         rgb[2] += pics[2]
                         count += 1
-                    except IndexError: # out of index
+                    except:# IndexError: # out of index
                         break
             try:
                 # calc average
@@ -119,12 +129,13 @@ def main(args=None):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='image file path.')
     parser.add_argument('file_path', metavar='file',
-                    help='image file path.')
+                    help='set image file path.')
     parser.add_argument('-v', '--version', action='version', version='%(prog)s 1.0')
-    parser.add_argument('-s', '--size',    type=int, help='image width.')
-    parser.add_argument('-d', '--depth',   type=int, choices=[8, 256], help='color depth. support 8(ansi) and 256(xterm-256).')
+    parser.add_argument('-s', '--size',    type=int, help='set image width. image width fit to number of character.')
+    parser.add_argument('-m', '--mode',    choices=["w", "h"], help='choice view mode. if you set "w", image width fit to screen width. the case of "h", fit to screen height. this option\'s effect is less than the size option.')
+    parser.add_argument('-d', '--depth',   type=int, choices=[8, 256], help='set color depth. support 8(ansi) and 256(xterm-256).')
     parser.add_argument('-t', action='store_true',    help='output with text format(write #).')
-    parser.add_argument('-f', '--file',    help='image file path.')
+    parser.add_argument('-f', '--file',    help='set image file path.')
     args = parser.parse_args()
     main(args)
 
