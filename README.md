@@ -1,7 +1,7 @@
-rohan
+icat
 =====
 
-draw image on terminal by ANSI Escape codes.
+draw image on CUI terminal by ANSI Escape codes.
 
 ------------------
 ### About
@@ -12,11 +12,21 @@ draw image on terminal by ANSI Escape codes.
 引数で与えた画像ファイルをターミナル上でANSI Escape codeを使ってレンダリングするスクリプトです。
 256色（xterm-256color）対応。
 
+### Require
+- Python2.7 or later
+    - PIL (Python Image Iibrary)
+    - argparse
+
 ### Usage
-    usage: rohan.py [-h] [-v] [-s SIZE] [-m {w,h}] [-d {8,256}] [-t] [-f FILE]
+    e.g.)
+        $ icat github.png
+        $ icat -w h github.png
+        $ icat -s 100 github.png
+
+    usage: icat [-h] [-v] [-s SIZE] [-m {w,h}] [-d {8,256}] [-t] [-f FILE]
                     file
 
-    image file path.
+    icat is a image viewer on terminal. render with ANSI Escape codes.
 
     positional arguments:
       file                  set image file path.
@@ -34,7 +44,6 @@ draw image on terminal by ANSI Escape codes.
                             set color depth. support 8(ansi) and 256(xterm-256).
       -t                    output with text format(write #).
       -f FILE, --file FILE  set image file path.
-
 
 ## Screenshot
 ![rohan1](http://mmiyajix.appspot.com/download/aghtbWl5YWppeHIQCxIIUG9zdERhdGEYio8IDA/Screen%20Shot%202013-06-06%20at%2010.41.51%20PM.png)
