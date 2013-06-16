@@ -20,7 +20,7 @@ draw image on CUI terminal by ANSI Escape codes.
 ### Usage
     e.g.)
         $ icat github.png
-        $ icat -w h github.png
+        $ icat -m h github.png
         $ icat -s 100 github.png
 
     usage: icat [-h] [-v] [-s SIZE] [-m {w,h}] [-d {8,256}] [-t] [-f FILE]
