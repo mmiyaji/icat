@@ -42,7 +42,9 @@ done
 
 
 echo "checking system config.."
-echo "python path.. " $PYTHON_PATH "\n"
+echo "python path.. " $PYTHON_PATH
+echo
+
 if [ "$PYTHON_PATH" ]
 then
     ARGP=$($PYTHON_PATH -c "import argparse" 2>&1)
@@ -66,9 +68,12 @@ else
     exit 1
 fi
 
-cat $TARGET | awk 'NR>1 {print}' > tmp.txt
-echo "#!$PYTHON_PATH" > $TARGET
-cat tmp.txt >> $TARGET
+cat $TARGET.tmp | awk 'NR>1 {print}' > tmp.txt
+echo "#!$PYTHON_PATH" > $TARGET.tmp
+cat tmp.txt >> $TARGET.tmp
 rm tmp.txt
-cp $TARGET $PREFIX/
-echo "\nInstalled $TARGET to $PREFIX/$TARGET"
+chmod 755 $TARGET.tmp
+cp $TARGET.tmp $PREFIX/$TARGET
+rm $TARGET.tmp
+echo
+echo "Installed $TARGET to $PREFIX/$TARGET"
