@@ -1,9 +1,11 @@
 #!/bin/sh
 # Created by mmiyaji on 2013-06-18.
 # Copyright (c) 2013  ruhenheim.org. All rights reserved.
-PREFIX=/usr/bin
+PREFIX=/usr
+BINARY_DIR=bin
 PYTHON_PATH="$(which python)"
 TARGET=icat
+INSTALL_MODE=1
 usage () {
     echo
     echo "Usage: [sudo] `basename $0` [options]"
@@ -12,6 +14,14 @@ usage () {
     echo
     echo "--with-python=/full/path/to/python"
     echo "  Path to the Python that you wish to use with icat."
+    echo "  default:  /usr/bin/python "
+    echo
+    echo "--prefix=/full/path/to/install"
+    echo "  Path to the install directoey that you wish to use with icat."
+    echo "  default:  /usr "
+    echo
+    echo "test"
+    echo "  module check mode. \"icat\" does not install in this time."
     echo
     exit 1
 }
@@ -33,16 +43,24 @@ do
             ;;
 
         *)
-            # case $option in
-            # esac
-            usage
+            case $option in
+                test )
+                    echo "running test mode."
+                    INSTALL_MODE=0
+                    ;;
+                *)
+                    usage
+                    ;;
+            esac
         ;;
     esac
 done
 
 
 echo "checking system config.."
-echo "python path.. " $PYTHON_PATH
+echo "python path..\t" $PYTHON_PATH
+echo "prefix.......\t" $PREFIX
+echo "install to...\t" $PREFIX/$BINARY_DIR
 echo
 
 if [ "$PYTHON_PATH" ]
@@ -68,12 +86,17 @@ else
     exit 1
 fi
 
-cat $TARGET.tmp | awk 'NR>1 {print}' > tmp.txt
-echo "#!$PYTHON_PATH" > $TARGET.tmp
-cat tmp.txt >> $TARGET.tmp
-rm tmp.txt
-chmod 755 $TARGET.tmp
-cp $TARGET.tmp $PREFIX/$TARGET
-rm $TARGET.tmp
-echo
-echo "Installed $TARGET to $PREFIX/$TARGET"
+if [ INSTALL_MODE == 1 ]
+then
+    cat $TARGET.tmp | awk 'NR>1 {print}' > tmp.txt
+    echo "#!$PYTHON_PATH" > $TARGET.tmp
+    cat tmp.txt >> $TARGET.tmp
+    rm tmp.txt
+    chmod 755 $TARGET.tmp
+    cp $TARGET.tmp $PREFIX/$BINARY_DIR/$TARGET
+    rm $TARGET.tmp
+    echo
+    echo "Installed $TARGET to $PREFIX/$TARGET"
+else
+    echo "test finished."
+fi
