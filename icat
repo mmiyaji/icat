@@ -6,7 +6,8 @@ icat.py
 Created by mmiyaji on 2013-06-03.
 Copyright (c) 2013  ruhenheim.org. All rights reserved.
 """
-import sys, os, math, Image, colorsys, curses, argparse
+import sys, os, math, colorsys, curses, argparse
+from PIL import Image
 def get_prompt(p, string = False):
     """
     Arguments:
@@ -81,7 +82,7 @@ def main(args=None):
     try:
         im = Image.open(path)
     except IOError:
-        print "No such file."
+        print ("No such file.")
         sys.exit(1)
     width, height = im.size
     try:
@@ -105,13 +106,13 @@ def main(args=None):
         w_step = 1
         h_step = 1
     out = []
-    for i in xrange(0, int(height / h_step)):
+    for i in range(0, int(height / h_step)):
         line = []
-        for j in xrange(0, int(width / w_step)):
+        for j in range(0, int(width / w_step)):
             rgb = [0.0, 0.0, 0.0]
             count = 0.0
-            for hi in xrange(0, int(math.ceil(w_step)), h_span):
-                for wi in xrange(0, int(math.ceil(h_step)), w_span):
+            for hi in range(0, int(math.ceil(w_step)), h_span):
+                for wi in range(0, int(math.ceil(h_step)), w_span):
                     try:
                         pics = im.getpixel((j*w_step + wi, i*h_step + hi))
                         rgb[0] += pics[0]
@@ -122,7 +123,7 @@ def main(args=None):
                         break
             try:
                 # calc average
-                line.append(map((lambda x: x / count), rgb))
+                line.append(list(map((lambda x: x / count), rgb)))
             except ZeroDivisionError:
                 pass
         out.append(line)
@@ -132,7 +133,7 @@ def main(args=None):
                 sys.stdout.write(get_prompt256(j, text))
             else:
                 sys.stdout.write(get_prompt(j, text))
-        print
+        print("")
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='icat is a image viewer on terminal. render with ANSI Escape codes.')
     parser.add_argument('file_path', metavar='file',
