@@ -88,13 +88,12 @@ fi
 
 if [ INSTALL_MODE == 1 ]
 then
-    cat $TARGET.tmp | awk 'NR>1 {print}' > tmp.txt
+    cat $TARGET | awk 'NR>1 {print}' > tmp.txt
     echo "#!$PYTHON_PATH" > $TARGET.tmp
     cat tmp.txt >> $TARGET.tmp
     rm tmp.txt
     chmod 755 $TARGET.tmp
-    cp $TARGET.tmp $PREFIX/$BINARY_DIR/$TARGET
-    rm $TARGET.tmp
+    mv $TARGET.tmp $PREFIX/$BINARY_DIR/$TARGET
     echo
     echo "Installed $TARGET to $PREFIX/$TARGET"
 else
