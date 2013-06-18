@@ -17,6 +17,13 @@ draw image on CUI terminal by ANSI Escape codes.
     - PIL (Python Image Iibrary)
     - argparse
 
+### How to install
+    $ git clone https://github.com/mmiyaji/icat.git
+    $ cd icat
+    $ sudo ./install.sh
+    or
+    $ ./install.sh --prefix=/usr/local
+
 ### Usage
     e.g.)
         $ icat github.png
