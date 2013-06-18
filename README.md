@@ -93,10 +93,10 @@ Screenshot
 <!-- - mini(1) -->
     <!-- ![icat3](http://mmiyajix.appspot.com/download/aghtbWl5YWppeHIQCxIIUG9zdERhdGEYiY8IDA/Screen%20Shot%202013-06-06%20at%2010.37.13%20PM.png) -->
 
-- natural(1)
+- natural(width 140)
     ![icat4](http://mmiyajix.appspot.com/download/aghtbWl5YWppeHIQCxIIUG9zdERhdGEYmeAHDA/2013-06-05-223145_1280x800_scrot.png)
 
-- mini(1)
+- mini(width 631)
     ![icat5](http://mmiyajix.appspot.com/download/aghtbWl5YWppeHIQCxIIUG9zdERhdGEY0fcHDA/2013-06-06-221022_1280x800_scrot.png)
 
 ### large jpeg picture(mini font size)
