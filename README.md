@@ -4,7 +4,8 @@ icat
 draw image on CUI terminal by ANSI Escape codes.
 
 ------------------
-### About
+About
+------
 ターミナルに画像を表示するスクリプト。
 
 [Pythonでターミナルに画像表示するやつ - mmiyajix http://mmiyajix.appspot.com/entry/123001](http://mmiyajix.appspot.com/entry/123001)
@@ -12,12 +13,14 @@ draw image on CUI terminal by ANSI Escape codes.
 引数で与えた画像ファイルをターミナル上でANSI Escape codeを使ってレンダリングするスクリプトです。
 256色（xterm-256color）対応。
 
-### Require
+Require
+-----
 - Python2.7 or later
     - PIL (Python Image Iibrary)
     - argparse
 
-### How to install
+How to install
+-----
     $ git clone https://github.com/mmiyaji/icat.git
     $ cd icat
     $ sudo ./install.sh
@@ -44,7 +47,8 @@ draw image on CUI terminal by ANSI Escape codes.
         module check mode. "icat" does not install in this time.
 
 
-### Usage
+Usage
+-----
     e.g.)
         $ icat github.png
         $ icat -m h github.png
@@ -72,16 +76,14 @@ draw image on CUI terminal by ANSI Escape codes.
       -t                    output with text format(write #).
       -f FILE, --file FILE  set image file path.
 
-## Screenshot
+Screenshot
+-----
 <!-- ![rohan1](http://mmiyajix.appspot.com/download/aghtbWl5YWppeHIQCxIIUG9zdERhdGEYio8IDA/Screen%20Shot%202013-06-06%20at%2010.41.51%20PM.png) -->
-compare 256 and 8 colors
-----
+### compare 256 and 8 colors
 ![icat1](http://mmiyajix.appspot.com/download/aghtbWl5YWppeHIQCxIIUG9zdERhdGEY8ZYIDA/icat_demo.png)
 
 
-compare font size
-----
-
+### compare font size
 - natural(1)
     ![icat2](http://mmiyajix.appspot.com/download/aghtbWl5YWppeHIQCxIIUG9zdERhdGEY4sgHDA/Screen%20Shot%202013-06-06%20at%2012.10.28%20AM.png)
 - mini(1)
@@ -92,8 +94,7 @@ compare font size
 - mini(2)
     ![icat5](http://mmiyajix.appspot.com/download/aghtbWl5YWppeHIQCxIIUG9zdERhdGEY0fcHDA/2013-06-06-221022_1280x800_scrot.png)
 
-large jpeg picture(mini font size)
-----
+### large jpeg picture(mini font size)
 ![icat6](http://mmiyajix.appspot.com/download/aghtbWl5YWppeHIQCxIIUG9zdERhdGEYqrEHDA/Screen%20Shot%202013-06-05%20at%2010.59.26%20PM.png)
 
 
