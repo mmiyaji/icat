@@ -12,16 +12,16 @@ usage () {
     echo
     echo "Options (see top of install.sh for complete list):"
     echo
-    echo "-h | --help"
+    echo "-h | --help | help"
     echo "  Display this message."
     echo
     echo "--with-python=/full/path/to/python"
     echo "  Path to the Python that you wish to use with icat."
-    echo "  default:  /usr/bin/python "
+    echo "  default:  $PYTHON_PATH "
     echo
     echo "--prefix=/full/path/to/install"
     echo "  Path to the install directoey that you wish to use with icat."
-    echo "  default:  /usr "
+    echo "  default:  $PREFIX "
     echo
     echo "test"
     echo "  module check mode. \"icat\" does not install in this time."
@@ -33,7 +33,7 @@ for option
 do
     optarg=`expr "x$option" : 'x[^=]*=\(.*\)'`
     case $option in
-        -h | --help)
+        -h | --help | help)
             usage
             exit 0
             ;;
