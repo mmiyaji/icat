@@ -85,17 +85,17 @@ Screenshot
 
 
 ### compare font size
+- terminal width 74 and 520
+![icat2-1](http://mmiyajix.appspot.com/download/aghtbWl5YWppeHIQCxIIUG9zdERhdGEYqa4IDA/20130618233814.png)
+<!-- - natural(1) -->
+    <!-- ![icat2](http://mmiyajix.appspot.com/download/aghtbWl5YWppeHIQCxIIUG9zdERhdGEY4sgHDA/Screen%20Shot%202013-06-06%20at%2012.10.28%20AM.png) -->
+<!-- - mini(1) -->
+    <!-- ![icat3](http://mmiyajix.appspot.com/download/aghtbWl5YWppeHIQCxIIUG9zdERhdGEYiY8IDA/Screen%20Shot%202013-06-06%20at%2010.37.13%20PM.png) -->
 
 - natural(1)
-    ![icat2](http://mmiyajix.appspot.com/download/aghtbWl5YWppeHIQCxIIUG9zdERhdGEY4sgHDA/Screen%20Shot%202013-06-06%20at%2012.10.28%20AM.png)
-
-- mini(1)
-    ![icat3](http://mmiyajix.appspot.com/download/aghtbWl5YWppeHIQCxIIUG9zdERhdGEYiY8IDA/Screen%20Shot%202013-06-06%20at%2010.37.13%20PM.png)
-
-- natural(2)
     ![icat4](http://mmiyajix.appspot.com/download/aghtbWl5YWppeHIQCxIIUG9zdERhdGEYmeAHDA/2013-06-05-223145_1280x800_scrot.png)
 
-- mini(2)
+- mini(1)
     ![icat5](http://mmiyajix.appspot.com/download/aghtbWl5YWppeHIQCxIIUG9zdERhdGEY0fcHDA/2013-06-06-221022_1280x800_scrot.png)
 
 ### large jpeg picture(mini font size)
