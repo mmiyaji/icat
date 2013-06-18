@@ -94,7 +94,7 @@ else
     exit 1
 fi
 
-if [ $INSTALL_MODE == 1 ]
+if [ "$INSTALL_MODE" == "1" ]
 then
     cat $TARGET | awk 'NR>1 {print}' > tmp.txt
     echo "#!$PYTHON_PATH" > $TARGET.tmp
