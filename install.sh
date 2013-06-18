@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 # Created by mmiyaji on 2013-06-18.
 # Copyright (c) 2013  ruhenheim.org. All rights reserved.
 PREFIX=/usr
