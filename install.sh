@@ -12,6 +12,9 @@ usage () {
     echo
     echo "Options (see top of install.sh for complete list):"
     echo
+    echo "-h | --help"
+    echo "  Display this message."
+    echo
     echo "--with-python=/full/path/to/python"
     echo "  Path to the Python that you wish to use with icat."
     echo "  default:  /usr/bin/python "
@@ -30,6 +33,11 @@ for option
 do
     optarg=`expr "x$option" : 'x[^=]*=\(.*\)'`
     case $option in
+        -h | --help)
+            usage
+            exit 0
+            ;;
+
         --with-python=* | -with-python=* | --withpython=* | -withpython=* )
             if [ "$optarg" ]; then
                 PYTHON_PATH="$optarg"
@@ -44,7 +52,7 @@ do
 
         *)
             case $option in
-                test )
+                test)
                     echo "running test mode."
                     INSTALL_MODE=0
                     ;;
@@ -86,7 +94,7 @@ else
     exit 1
 fi
 
-if [ INSTALL_MODE == 1 ]
+if [ $INSTALL_MODE == 1 ]
 then
     cat $TARGET | awk 'NR>1 {print}' > tmp.txt
     echo "#!$PYTHON_PATH" > $TARGET.tmp
@@ -95,7 +103,7 @@ then
     chmod 755 $TARGET.tmp
     mv $TARGET.tmp $PREFIX/$BINARY_DIR/$TARGET
     echo
-    echo "Installed $TARGET to $PREFIX/$TARGET"
+    echo "Installed $TARGET to $PREFIX/$BINARY_DIR/$TARGET"
 else
     echo "test finished."
 fi
