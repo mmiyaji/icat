@@ -1,7 +1,8 @@
 icat
 =====
 
-draw image on CUI terminal by ANSI Escape codes.
+This script draws image on CUI terminal by ANSI Escape codes.
+It can use like a cat command. (image cat -> icat)
 
 ------------------
 About
