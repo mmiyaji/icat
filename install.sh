@@ -39,7 +39,8 @@ do
             ;;
 
         --with-python=* | -with-python=* | --withpython=* | -withpython=* )
-            if [ "$optarg" ]; then
+            if [ "$optarg" ]
+            then
                 PYTHON_PATH="$optarg"
             else
                 continue
@@ -60,7 +61,7 @@ do
                     usage
                     ;;
             esac
-        ;;
+            ;;
     esac
 done
 
