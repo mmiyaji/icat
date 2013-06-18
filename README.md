@@ -24,6 +24,26 @@ draw image on CUI terminal by ANSI Escape codes.
     or
     $ ./install.sh --prefix=/usr/local
 
+
+    Usage: [sudo] install.sh [options]
+
+    Options (see top of install.sh for complete list):
+
+    -h | --help
+        Display this message.
+
+    --with-python=/full/path/to/python
+        Path to the Python that you wish to use with icat.
+        default:  /usr/bin/python
+
+    --prefix=/full/path/to/install
+        Path to the install directoey that you wish to use with icat.
+        default:  /usr
+
+    test
+        module check mode. "icat" does not install in this time.
+
+
 ### Usage
     e.g.)
         $ icat github.png
