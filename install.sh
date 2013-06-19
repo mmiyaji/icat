@@ -26,7 +26,6 @@ usage () {
     echo "test"
     echo "  module check mode. \"icat\" does not install in this time."
     echo
-    exit 1
 }
 
 for option
@@ -59,6 +58,7 @@ do
                     ;;
                 *)
                     usage
+                    exit 1
                     ;;
             esac
             ;;
