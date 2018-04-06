@@ -81,7 +81,7 @@ Screenshot
 -----
 ![icat1](https://raw.githubusercontent.com/mmiyaji/icat/master/screenshot/icat1.PNG)
 ![icat2](https://raw.githubusercontent.com/mmiyaji/icat/master/screenshot/icat2.PNG)
-![icat3](https://raw.githubusercontent.com/mmiyaji/icat/master/screenshot/icat3.PN\G)
+![icat3](https://raw.githubusercontent.com/mmiyaji/icat/master/screenshot/icat3.PNG)
 
 
 # License
