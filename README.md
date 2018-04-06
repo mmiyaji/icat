@@ -20,10 +20,11 @@ Require
     - PIL (Python Image Iibrary) / pillow
     - argparse
 
-
-    $ pip install pillow
-    $ pip install argparse
-
+pip install
+```
+$ pip install pillow
+$ pip install argparse
+```
 
 How to install
 -----
