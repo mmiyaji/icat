@@ -17,8 +17,13 @@ About
 Require
 -----
 - Python2.7 or later
-    - PIL (Python Image Iibrary)
+    - PIL (Python Image Iibrary) / pillow
     - argparse
+
+
+    $ pip install pillow
+    $ pip install argparse
+
 
 How to install
 -----
